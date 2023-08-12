@@ -11,7 +11,7 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    // Add matching validation
+    match: /.+\@.+\..+/ // regex for a valid email address
   },
   thoughts: [
     {
@@ -25,7 +25,15 @@ const UserSchema = new Schema({
       ref: 'User'
     }
   ]
-});
+},
+{
+  toJSON: {
+    virtuals: true,
+    getters: true
+  },
+  id: false
+}
+);
 
 UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
