@@ -25,6 +25,10 @@ const userController = {
             path: 'thoughts',
             select: '-__v'
         })
+        .populate({
+            path: 'friends',
+            select: '-__v'
+        })
         .select('-__v')
         .then(dbUserData => {
             if(!dbUserData) {
@@ -64,7 +68,7 @@ const userController = {
             if(!dbUserData) {
                 res.status(404).json({message: 'No user found with this id'})
                 return
-            },
+            };
             // remove user's thoughts
             Thought.deleteMany({_id: {$in: dbUserData.thoughts}})
         })
