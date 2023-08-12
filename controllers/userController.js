@@ -64,7 +64,11 @@ const userController = {
             if(!dbUserData) {
                 res.status(404).json({message: 'No user found with this id'})
                 return
-            }
+            },
+            // remove user's thoughts
+            Thought.deleteMany({_id: {$in: dbUserData.thoughts}})
+        })
+        .then(() => {
             res.json(dbUserData)
         })
         .catch(err => res.json(err))
