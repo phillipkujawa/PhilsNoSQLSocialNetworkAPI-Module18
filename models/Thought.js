@@ -9,7 +9,7 @@ const ReactionsSchema = new Schema({
     // Set custom id to avoid confusion with parent comment's _id field
     reactionId: {
         type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId()
+        default: () => new Schema.Types.ObjectId()
     },
     reactionBody: {
         type: String,
@@ -50,8 +50,14 @@ const ThoughtSchema = new Schema({
         type: String,
         required: true
     },
+    userId: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
+    },
     // Use ReactionsSchema to validate data for a reply
     reactions: [ReactionsSchema]
+
 },
 {
     toJSON: {
