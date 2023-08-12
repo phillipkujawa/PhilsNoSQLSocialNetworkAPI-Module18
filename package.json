@@ -1,0 +1,27 @@
+{
+  "name": "philsnosqlsocialnetworkapi-module18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillipkujawa/PhilsNoSQLSocialNetworkAPI-Module18.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillipkujawa/PhilsNoSQLSocialNetworkAPI-Module18/issues"
+  },
+  "homepage": "https://github.com/phillipkujawa/PhilsNoSQLSocialNetworkAPI-Module18#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
