@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, mongoose } = require('mongoose');
 
 function dateFormat(createdAtVal) {
     return createdAtVal.toDateString(); 
@@ -9,7 +9,7 @@ const ReactionsSchema = new Schema({
     // Set custom id to avoid confusion with parent comment's _id field
     reactionId: {
         type: Schema.Types.ObjectId,
-        default: () => new Schema.Types.ObjectId()
+        default: () => new mongoose.Types.ObjectId()
     },
     reactionBody: {
         type: String,
